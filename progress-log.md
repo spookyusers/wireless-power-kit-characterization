@@ -45,4 +45,16 @@
 - Corresponding ringing frequency is ~50MHz.
 - Ringing decays within a few cycles before the next switching event.
 
+## 2026-01-12 — TX Driver Circuit (Initial)
+
+- TX uses a single NPN transistor in a self-oscillating configuration.
+- Oscillation is sustained by feedback from the coil structure.
+- Transistor switches in bursts, injecting energy into the resonant coil.
+- Resonant coil rings freely after each switching event.
+- Collector waveform matches primary coil waveform, indicating both are part of the same switching node.
+- Transistor base shows approximately sinusoidal feedback at ~3.8 MHz.
+- Positive portion of base waveform is clipped at ~3.5 V.
+- Indicates nonlinear base drive with amplitude limiting.
+- Based on scope measurements of collector, coil, and base, TX driver operation is now understood as a self-oscillating, impulsively driven resonant circuit. See TX driver explanation for details.
+
 
