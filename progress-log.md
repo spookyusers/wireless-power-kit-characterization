@@ -35,4 +35,14 @@
 - Effect is reversible and immediate upon hand removal.
 - Effect observed even when hand is stationary, suggesting sensitivity to proximity rather than motion.
 
+## 2026-01-13 - Probing Frequency
+- Probing TX primary coil relative to battery negative shows a stable, periodic waveform.
+- Waveform consists of sharp voltage spikes followed by damped oscillations.
+- Repetition frequency of spikes is approximately 3.4 MHz.
+- Oscillation persists without RX present.
+- Zoomed view of TX waveform shows damped oscillation following each switching spike.
+- Ringing period is ~ 20ns.
+- Corresponding ringing frequency is ~50MHz.
+- Ringing decays within a few cycles before the next switching event.
+
 
