@@ -5,6 +5,10 @@ Educational reverse engineering and characterization of a low-cost wireless powe
 To understand how this kit works by measuring key parameters (power, frequency, range, efficiency), documenting the circuit, and sharing findings for educational purposes.
 
 ## Kit Overview
+![TX and RX modules on bench](images/rx_tx.jpeg)
+
+TX and RX modules used in the wireless power transmission experiments.
+
 - Low-power (3-4.5V DC input) wireless power transfer kit (part of one of the Poraxy STEM kits).
 - Demonstrates short-range wireless energy transfer: transmitter powers a resonant coil / antenna structure; receiver lights LEDs without its own power source.
 - Two main units: transmitter (TX) with battery pack and driver circuit; receiver (RX) passive with LEDs.
@@ -58,11 +62,21 @@ Based on oscilloscope measurements and non-contact field probing:
 
 - The TX operates as a self-oscillating, single-transistor driver producing impulsive excitation of the coil structure.
 - Electrical waveforms at the TX switching node consist of sharp voltage spikes followed by damped ringing; the repetition rate of these events is ~3–4 MHz.
+
+![TX switching node waveform showing spikes and ringing](images/drive_waveform.jpeg)
+
+Representative oscilloscope capture of the TX switching node showing impulsive excitation followed by damped ringing.
+
 - Feedback at the transistor base is approximately sinusoidal at ~3.7–3.8 MHz and exhibits hard voltage clipping, indicating nonlinear, self-limited operation.
 - Orientation between TX and RX coils strongly affects coupling, with a pronounced null near 180 degree relative rotation.
 - RX-side measurements show a quasi-sinusoidal signal at ~6–7 MHz at the coil/rectifier input.
 - RX signal amplitude is strongly affected by electrical loading; disconnecting the LED load increases received AC amplitude and rectified DC voltage.
 - Pickup-loop measurements near the RX coil indicate that the dominant coupled magnetic field is near-sinusoidal at ~6–7 MHz, with amplitude decreasing smoothly as TX–RX separation increases.
+
+![Pickup loop positioned near RX coil](images/pickup_loop.jpeg)
+
+Non-contact pickup loop used to observe the magnetic field near the RX coil.
+
 - Rectified DC output at the RX is ~3 V under LED load and rises to ~6 V with the load disconnected.
 
 These observations indicate that wireless power transfer in this kit is mediated by a coupled oscillating magnetic field at ~6–7 MHz, while higher-frequency ringing observed at the TX switching node does not dominate the coupled field at the RX.
