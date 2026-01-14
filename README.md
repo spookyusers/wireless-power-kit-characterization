@@ -47,9 +47,25 @@ To understand how this kit works by measuring key parameters (power, frequency, 
 - Digital multimeter
 - Ruler (regular wooden 12-inch type for now)
 - Phone camera for shots and reading small print on PCB/ICs
-- Oscilloscope for frequency analysis
+- Oscilloscope for frequency analysis (including pickup loop)
 
 ## Progress Log
 See [progress-log.md](progress-log.md) for dated entries, measurements, and observations.
+
+## Findings
+
+Based on oscilloscope measurements and non-contact field probing:
+
+- The TX operates as a self-oscillating, single-transistor driver producing impulsive excitation of the coil structure.
+- Electrical waveforms at the TX switching node consist of sharp voltage spikes followed by damped ringing; the repetition rate of these events is ~3–4 MHz.
+- Feedback at the transistor base is approximately sinusoidal at ~3.7–3.8 MHz and exhibits hard voltage clipping, indicating nonlinear, self-limited operation.
+- Orientation between TX and RX coils strongly affects coupling, with a pronounced null near 180 degree relative rotation.
+- RX-side measurements show a quasi-sinusoidal signal at ~6–7 MHz at the coil/rectifier input.
+- RX signal amplitude is strongly affected by electrical loading; disconnecting the LED load increases received AC amplitude and rectified DC voltage.
+- Pickup-loop measurements near the RX coil indicate that the dominant coupled magnetic field is near-sinusoidal at ~6–7 MHz, with amplitude decreasing smoothly as TX–RX separation increases.
+- Rectified DC output at the RX is ~3 V under LED load and rises to ~6 V with the load disconnected.
+
+These observations indicate that wireless power transfer in this kit is mediated by a coupled oscillating magnetic field at ~6–7 MHz, while higher-frequency ringing observed at the TX switching node does not dominate the coupled field at the RX.
+
 
   
